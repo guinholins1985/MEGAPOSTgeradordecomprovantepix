@@ -7,9 +7,7 @@ interface ReceiptProps {
 }
 
 const NubankLogo = () => (
-    <svg width="40" height="25" viewBox="0 0 63 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-6">
-        <path d="M26.43 39.528C11.252 39.528 0 32.416 0 20.132 0 7.448 10.988 0 25.702 0h2.196v3.294c-1.318.066-2.504.13-3.756.13-11.714 0-19.134 4.882-19.134 16.708 0 11.252 8.444 15.972 18.706 15.972 1.84 0 3.548-.132 5.08-.328V.458h2.196C42.85 0 52.862 7.846 52.862 20.066c0 12.536-9.946 19.462-26.432 19.462zm29.856-19.33c0-12.276-9.88-19.66-24.918-19.66h-2.13v39.07h2.13c15.102 0 24.918-7.514 24.918-19.41z" fill="#8A05BE"></path>
-    </svg>
+    <img src="https://i.postimg.cc/sQZZr1MS/NUBANK2.png" alt="Nubank Logo" className="w-24 mb-6" />
 )
 
 const NubankReceipt: React.FC<ReceiptProps> = ({ data }) => {
@@ -18,7 +16,7 @@ const NubankReceipt: React.FC<ReceiptProps> = ({ data }) => {
         try {
             const dataObj = new Date(dataHora);
             const dia = String(dataObj.getDate()).padStart(2, '0');
-            const meses = ['FEV', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
+            const meses = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
             const mes = meses[dataObj.getMonth()];
             const ano = dataObj.getFullYear();
             const horas = String(dataObj.getHours()).padStart(2, '0');

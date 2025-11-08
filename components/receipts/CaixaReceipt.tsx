@@ -1,23 +1,13 @@
 import React from 'react';
 import { TransactionData } from '../../types';
-import { formatarValor, formatarCPFCNPJ } from '../../utils';
+import { formatarValor, formatarCPFCNPJ, formatarNumero } from '../../utils';
 
 interface ReceiptProps {
   data: TransactionData;
 }
 
 const CaixaLogo = () => (
-    <svg width="70" height="25" viewBox="0 0 100 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* FIX: Added opening <g> tag to fix malformed SVG. */}
-        <g>
-            <path d="M63.56 10.24h-3.44l-4.48 6.8-4.48-6.8h-3.44l6.24 9.12-6.56 9.6h3.44l4.8-7.28 4.8 7.28h3.44l-6.56-9.52 6.24-9.2z" fill="white"></path>
-            <path d="M84.44 28.96c-4.48 0-7.2-2.72-7.2-6.8V12.8h3.44v9.36c0 2.56 1.6 4 3.76 4s3.76-1.44 3.76-4v-9.36h3.44v9.36c0 4.08-2.72 6.8-7.2 6.8z" fill="white"></path>
-            <path d="M23.08 10.24h-3.44v18.72h3.44V10.24z" fill="white"></path>
-            <path d="M43.72 21.6c0-4.08-2.72-6.8-7.2-6.8s-7.2 2.72-7.2 6.8 2.72 6.8 7.2 6.8 7.2-2.72 7.2-6.8zm-10.96 0c0-2.56 1.6-4 3.76-4s3.76 1.44 3.76 4-1.6 4-3.76 4-3.76-1.44-3.76-4z" fill="white"></path>
-            <path d="M35.64 10.24H19.96V7.36h19.12v2.88h-3.44z" fill="white"></path>
-            <path d="M25.48 12.8v16.16h-5.52V12.8h5.52z" fill="#0065A8"></path>
-        </g>
-    </svg>
+    <img src="https://i.postimg.cc/WDYfyYZz/CAIXA.png" alt="CAIXA Logo" className="w-32 filter brightness-0 invert" />
 )
 
 const CaixaReceipt: React.FC<ReceiptProps> = ({ data }) => {
@@ -90,7 +80,7 @@ const CaixaReceipt: React.FC<ReceiptProps> = ({ data }) => {
 
              <Section title="Dados da transação">
                 <InfoRow label="Situação" value="Efetivado" />
-                <InfoRow label="Valor" value={data.valor.replace('.',',')} />
+                <InfoRow label="Valor" value={formatarNumero(data.valor)} />
                 <InfoRow label="Data / Hora" value={full} />
                 <InfoRow label="ID transação" value={data.idTransacao} />
                 {data.codigoOperacao && <InfoRow label="Código da operação" value={data.codigoOperacao} />}
