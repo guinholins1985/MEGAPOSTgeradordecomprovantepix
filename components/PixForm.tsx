@@ -75,6 +75,13 @@ const PixForm: React.FC<PixFormProps> = ({ formData, setFormData, onGeminiGenera
       <div className="mt-6">
         <Input name="idTransacao" label="ID da Transação" />
       </div>
+
+      {formData.banco === Bank.Caixa && (
+        <Section title="Dados Adicionais (Caixa)">
+          <Input name="codigoOperacao" label="Código da Operação" />
+          <Input name="chaveSeguranca" label="Chave de Segurança" />
+        </Section>
+      )}
       
       <div className="mt-8">
         <button

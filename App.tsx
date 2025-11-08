@@ -24,6 +24,8 @@ function App() {
     agenciaOrigem: '0001',
     contaOrigem: '98765-4',
     idTransacao: 'E18236120202308011234ABCD1234EFG',
+    codigoOperacao: '44958909764',
+    chaveSeguranca: 'G3UV8481ROKEYGC8',
   });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -35,7 +37,7 @@ function App() {
       // FIX: Correctly initialize GoogleGenAI with a named apiKey parameter as per guidelines.
       const ai = new GoogleGenAI({apiKey: process.env.API_KEY!});
 
-      const prompt = `Gere dados para um comprovante de PIX. Use o valor aproximado de ${formData.valor} para a transação e o banco ${formData.banco}.`;
+      const prompt = `Gere dados para um comprovante de PIX. Use o valor aproximado de ${formData.valor} para a transação e o banco ${formData.banco}. Se o banco for Caixa, gere também um código de operação e chave de segurança.`;
       
       const responseSchema = {
           type: Type.OBJECT,
@@ -53,6 +55,8 @@ function App() {
               agenciaOrigem: { type: Type.STRING, description: 'Agência do remetente' },
               contaOrigem: { type: Type.STRING, description: 'Conta do remetente' },
               idTransacao: { type: Type.STRING, description: 'ID da transação no formato E... ou D...' },
+              codigoOperacao: { type: Type.STRING, description: 'Código da operação (relevante para Caixa)' },
+              chaveSeguranca: { type: Type.STRING, description: 'Chave de segurança (relevante para Caixa)' },
           },
           required: [
             "valor", "nomeDestino", "cpfCnpjDestino", "instituicaoDestino", "agenciaDestino", "contaDestino",

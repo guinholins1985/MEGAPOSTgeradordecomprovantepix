@@ -21,4 +21,7 @@ export interface TransactionData {
   agenciaOrigem: string;
   contaOrigem: string;
   idTransacao: string;
+  // Caixa specific fields
+  codigoOperacao?: string;
+  chaveSeguranca?: string;
 }
