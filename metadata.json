@@ -1,0 +1,5 @@
+{
+  "name": "PIX Receipt Generator",
+  "description": "A web application to generate and download customized PIX transaction receipts that mimic the style of various Brazilian banks.",
+  "requestFramePermissions": []
+}
