@@ -95,8 +95,10 @@ function App() {
       <main className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
           <header className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-800">Gerador de Comprovante PIX</h1>
-            <p className="text-gray-500 mt-2">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 pb-2">
+              Gerador de Comprovante PIX
+            </h1>
+            <p className="text-gray-500 mt-2 text-center">
               Preencha os campos manualmente ou use a IA para gerar dados aleatórios e visualizar um modelo de comprovante.
             </p>
           </header>
