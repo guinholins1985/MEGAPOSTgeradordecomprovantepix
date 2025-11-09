@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-// FIX: Correct import from @google/genai according to guidelines.
 import { GoogleGenAI, Type } from "@google/genai";
 import { Bank, TransactionData } from './types';
 import PixForm from './components/PixForm';
@@ -34,7 +33,6 @@ function App() {
     setIsLoading(true);
     setError(null);
     try {
-      // FIX: Correctly initialize GoogleGenAI with a named apiKey parameter as per guidelines.
       const ai = new GoogleGenAI({apiKey: process.env.API_KEY!});
 
       const prompt = `Gere dados para um comprovante de PIX. Use o valor aproximado de ${formData.valor} para a transação e o banco ${formData.banco}. Se o banco for Caixa, gere também um código de operação e chave de segurança.`;
@@ -64,7 +62,6 @@ function App() {
           ]
       };
 
-      // FIX: Use ai.models.generateContent for API calls as per guidelines.
       const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
         contents: prompt,
@@ -74,7 +71,6 @@ function App() {
         },
       });
 
-      // FIX: Directly access the 'text' property from the response as per guidelines.
       const text = response.text;
       
       const generatedData = JSON.parse(text);

@@ -11,7 +11,6 @@ export const formatarCPFCNPJ = (cpfCnpj: string): string => {
   return cpfCnpj;
 };
 
-// FIX: Export the parseValor function to make it accessible to other modules.
 export const parseValor = (valor: string): number => {
     if (typeof valor !== 'string' || valor.trim() === '') {
         return NaN;

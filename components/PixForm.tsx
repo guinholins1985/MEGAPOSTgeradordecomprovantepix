@@ -109,21 +109,21 @@ const PixForm: React.FC<PixFormProps> = ({ formData, setFormData, onGeminiGenera
             ))}
           </select>
         </div>
-        <Input name="valor" label="Valor (ex: 123.45)" error={valorError} formData={formData} handleChange={handleChange as any} />
+        <Input name="valor" label="Valor (ex: 123.45)" error={valorError} formData={formData} handleChange={handleChange} />
       </div>
 
       <Section title="Destino">
-        <Input name="nomeDestino" label="Nome" formData={formData} handleChange={handleChange as any} />
-        <Input name="cpfCnpjDestino" label="CPF/CNPJ (apenas números)" formData={formData} handleChange={handleChange as any} />
-        <Input name="instituicaoDestino" label="Instituição" formData={formData} handleChange={handleChange as any} />
-        <Input name="agenciaDestino" label="Agência" formData={formData} handleChange={handleChange as any} />
-        <Input name="contaDestino" label="Conta" formData={formData} handleChange={handleChange as any} />
-        <Input name="chavePixDestino" label="Chave Pix" formData={formData} handleChange={handleChange as any} />
+        <Input name="nomeDestino" label="Nome" formData={formData} handleChange={handleChange} />
+        <Input name="cpfCnpjDestino" label="CPF/CNPJ (apenas números)" formData={formData} handleChange={handleChange} />
+        <Input name="instituicaoDestino" label="Instituição" formData={formData} handleChange={handleChange} />
+        <Input name="agenciaDestino" label="Agência" formData={formData} handleChange={handleChange} />
+        <Input name="contaDestino" label="Conta" formData={formData} handleChange={handleChange} />
+        <Input name="chavePixDestino" label="Chave Pix" formData={formData} handleChange={handleChange} />
       </Section>
       
       <Section title="Origem">
-        <Input name="nomeOrigem" label="Nome" formData={formData} handleChange={handleChange as any} />
-        <Input name="cpfCnpjOrigem" label="CPF/CNPJ (apenas números)" formData={formData} handleChange={handleChange as any} />
+        <Input name="nomeOrigem" label="Nome" formData={formData} handleChange={handleChange} />
+        <Input name="cpfCnpjOrigem" label="CPF/CNPJ (apenas números)" formData={formData} handleChange={handleChange} />
         <div>
             <label htmlFor="instituicaoOrigem" className="block text-sm font-medium text-gray-700 mb-1">Instituição</label>
             <select
@@ -138,18 +138,18 @@ const PixForm: React.FC<PixFormProps> = ({ formData, setFormData, onGeminiGenera
                 ))}
             </select>
         </div>
-        <Input name="agenciaOrigem" label="Agência" formData={formData} handleChange={handleChange as any} />
-        <Input name="contaOrigem" label="Conta" formData={formData} handleChange={handleChange as any} />
+        <Input name="agenciaOrigem" label="Agência" formData={formData} handleChange={handleChange} />
+        <Input name="contaOrigem" label="Conta" formData={formData} handleChange={handleChange} />
       </Section>
 
       <div className="mt-6">
-        <Input name="idTransacao" label="ID da Transação" formData={formData} handleChange={handleChange as any} />
+        <Input name="idTransacao" label="ID da Transação" formData={formData} handleChange={handleChange} />
       </div>
 
       {formData.banco === Bank.Caixa && (
         <Section title="Dados Adicionais (Caixa)">
-          <Input name="codigoOperacao" label="Código da Operação" formData={formData} handleChange={handleChange as any} />
-          <Input name="chaveSeguranca" label="Chave de Segurança" formData={formData} handleChange={handleChange as any} />
+          <Input name="codigoOperacao" label="Código da Operação" formData={formData} handleChange={handleChange} />
+          <Input name="chaveSeguranca" label="Chave de Segurança" formData={formData} handleChange={handleChange} />
         </Section>
       )}
       
